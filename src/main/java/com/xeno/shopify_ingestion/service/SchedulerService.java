@@ -20,7 +20,7 @@ public class SchedulerService {
 
     // Run every 1 hour (3600000 milliseconds)
     // For testing: use 300000 (5 minutes)
-    @Scheduled(fixedRate = 100000)
+    @Scheduled(fixedRate = 1000000)
     public void syncAllTenants() {
         System.out.println("=== AUTO SYNC STARTED at " + LocalDateTime.now() + " ===");
 
