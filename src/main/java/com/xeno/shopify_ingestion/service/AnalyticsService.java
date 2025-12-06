@@ -1,6 +1,5 @@
 package com.xeno.shopify_ingestion.service;
-import org.springframework.cache.annotation.CacheEvict;
-import org.springframework.cache.annotation.Cacheable;
+
 import com.xeno.shopify_ingestion.model.Customer;
 import com.xeno.shopify_ingestion.model.Order;
 import com.xeno.shopify_ingestion.repository.CustomerRepository;
@@ -21,7 +20,7 @@ public class AnalyticsService {
     private OrderRepository orderRepository;
 
     // 1. Get summary stats
-    @Cacheable(value = "summary", key = "#tenantId")
+   
     public Map<String, Object> getSummary(Long tenantId) {
         Map<String, Object> summary = new HashMap<>();
 
@@ -47,7 +46,7 @@ public class AnalyticsService {
     }
 
     // 2. Get top 5 customers by spend
-    @Cacheable(value = "topCustomers", key = "#tenantId + '_' + #limit")
+   
     public List<Map<String, Object>> getTopCustomers(Long tenantId, int limit) {
         List<Customer> customers = customerRepository.findTop5ByTenantIdOrderByTotalSpentDesc(tenantId);
 
@@ -71,7 +70,7 @@ public class AnalyticsService {
     }
 
     // 3. Get orders by date (for line chart)
-    @Cacheable(value = "ordersByDate", key = "#tenantId + '_' + #startDate + '_' + #endDate")
+   
     public List<Map<String, Object>> getOrdersByDate(Long tenantId, LocalDateTime startDate, LocalDateTime endDate) {
         List<Order> orders;
 
@@ -111,7 +110,7 @@ public class AnalyticsService {
     }
 
     // 4. Get order status distribution (for pie chart)
-    @Cacheable(value = "orderStatus", key = "#tenantId")
+   
     public List<Map<String, Object>> getOrderStatusDistribution(Long tenantId) {
         List<Order> orders = orderRepository.findByTenantId(tenantId);
 
@@ -133,10 +132,7 @@ public class AnalyticsService {
         return result;
     }
 
-    // Clear all caches for a tenant (call this after sync)
-    @CacheEvict(value = {"summary", "topCustomers", "ordersByDate", "orderStatus"}, allEntries = true)
-    public void clearCache() {
-        System.out.println("🟢 CACHE CLEARED - Fresh data will be fetched next time");
-    }
+ 
+  
 
 }
