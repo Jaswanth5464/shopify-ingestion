@@ -18,8 +18,7 @@ import java.util.Map;
 @Service
 public class DataIngestionService {
 
-    @Autowired
-    private AnalyticsService analyticsService;
+  
     @Autowired
     private ShopifyApiService shopifyApiService;
 
@@ -99,7 +98,7 @@ public class DataIngestionService {
             customerRepository.save(customer);
             savedCount++;
         }
-        analyticsService.clearCache();
+     
         return "Synced " + savedCount + " customers successfully!";
     }
 
@@ -178,7 +177,7 @@ public class DataIngestionService {
             orderRepository.save(order);
             savedCount++;
         }
-        analyticsService.clearCache();
+        //analyticsService.clearCache();
         return "Synced " + savedCount + " orders successfully!";
     }
 
@@ -245,7 +244,7 @@ public class DataIngestionService {
             productRepository.save(product);
             savedCount++;
         }
-        analyticsService.clearCache();
+       // analyticsService.clearCache();
         return "Synced " + savedCount + " products successfully!";
     }
 }
