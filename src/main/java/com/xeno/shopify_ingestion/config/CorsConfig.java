@@ -12,11 +12,11 @@ public class CorsConfig implements WebMvcConfigurer {
         registry.addMapping("/api/**")
                 .allowedOrigins(
                     "http://localhost:3000",
-                    "https://*.vercel.app",
-                    "https://vercel.app"
+                    "https://shopify-dashboard-frontend-five.vercel.app"  // ✅ Exact URL
                 )
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
-                .allowCredentials(false);
+                .allowCredentials(true)  // ✅ Changed to true
+                .maxAge(3600);  // Cache preflight for 1 hour
     }
 }
