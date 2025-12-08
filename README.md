@@ -571,9 +571,9 @@ This project was developed as part of the **Xeno Forward Deployed Engineer (FDE)
 ## 👨‍💻 Author
 
 **Your Name**  
-Email: your.email@example.com  
-LinkedIn: [linkedin.com/in/yourprofile](https://linkedin.com/in/yourprofile)  
-GitHub: [@yourusername](https://github.com/yourusername)
+Email: jaswanth5464@gmail.com  
+LinkedIn: www.linkedin.com/in/jaswanth-kanamrlapudi-a41197252
+GitHub: https://github.com/Jaswanth5464
 
 ---
 
