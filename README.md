@@ -7,7 +7,7 @@ A full-stack web application that connects to Shopify stores and provides real-t
 ## 🌐 Live Demo
 
 - **Frontend (Dashboard)**: [https://your-app.vercel.app](https://shopify-dashboard-frontend-five.vercel.app/)
-- **Backend (API)**: [https://your-backend.railway.app](https://shopify-ingestion-production.up.railway.app/api)
+- **Backend (API)**: [https://shopify-ingestion-production.up.railway.app/api]
 
 > *Replace the above links with your actual deployment URLs*
 
